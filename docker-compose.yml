@@ -18,6 +18,15 @@ services:
     expose:
       - 3306
       - 33060
+  
+  adminer:
+    image: adminer:latest
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 8090:8080
+
   wordpress:
     image: wordpress:latest
     ports:
